@@ -310,8 +310,7 @@ public static class GagSpeakServiceExtensions
 
         // Puppeteer UI
         .AddSingleton<PuppeteerHandler>()
-        .AddSingleton<PuppeteerComponents>()
-        .AddSingleton<AliasTable>()        
+        .AddSingleton<AliasTable>()
 
         // Toybox UI
         .AddSingleton<ToyboxOverview>()

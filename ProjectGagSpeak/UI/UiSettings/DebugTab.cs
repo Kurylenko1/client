@@ -2,7 +2,6 @@ using Dalamud.Interface;
 using Dalamud.Interface.Colors;
 using Dalamud.Interface.Utility.Raii;
 using Dalamud.Utility;
-using FFXIVClientStructs.FFXIV.Common.Lua;
 using GagSpeak.PlayerData.Data;
 using GagSpeak.PlayerData.Pairs;
 using GagSpeak.Services.ConfigurationServices;
@@ -193,7 +192,7 @@ public class DebugTab
         ImGui.Text($"Total Pairs: {_pairManager.DirectPairs.Count}");
         ImGui.Text($"Visible Users: {_pairManager.GetVisibleUserCount()}");
         // draw an enclosed tree node here for the pair data. Inside of this, we will have a different tree node for each of the keys in our pair storage.
-        using var pairData = ImRaii.TreeNode("Pair Data Listings");
+        using var pairData = ImRaii.TreeNode("Pair Data");
         if (!pairData) return;
 
         foreach (var pair in _pairManager.DirectPairs)
@@ -438,7 +437,7 @@ public class DebugTab
         for (int i = 0; i < 3; i++)
         {
             ImGui.TableNextColumn();
-            UiSharedService.ColorText(UiSharedService.TimeLeftFancy(appearance.GagSlots[i].Timer), ImGuiColors.ParsedPink);
+            UiSharedService.TimeLeftFancy(appearance.GagSlots[i].Timer);
         }
         ImGui.TableNextRow();
 
@@ -459,7 +458,7 @@ public class DebugTab
             DrawPermissionRowString("Padlock", wardrobe.Padlock);
             ImGuiUtil.DrawTableColumn("Expiration Time");
             ImGui.TableNextColumn();
-            UiSharedService.ColorText(UiSharedService.TimeLeftFancy(wardrobe.Timer), ImGuiColors.ParsedPink);
+            UiSharedService.TimeLeftFancy(wardrobe.Timer);
             ImGui.TableNextRow();
             DrawPermissionRowString("Assigner", wardrobe.Assigner);
         }
@@ -476,12 +475,6 @@ public class DebugTab
     {
         using var nodeMain = ImRaii.TreeNode("Alias Data");
         if (!nodeMain) return;
-
-        ImGui.Text("Has Name Stored: ");
-        _uiShared.BooleanToColoredIcon(alias.HasNameStored, true);
-
-        ImGui.Text("Listener Name: '" + alias.ListenerName + "'");
-        ImGui.Text("Extracted Listener Name: '" + alias.ExtractedListernerName + "'");
 
         using var table = ImRaii.Table("##debug-aliasdata-" + uid, 2, ImGuiTableFlags.RowBg | ImGuiTableFlags.SizingFixedFit);
         ImGui.TableSetupColumn("Alias Input");
