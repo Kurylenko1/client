@@ -66,10 +66,10 @@ namespace GagSpeak.Localization
 
     public class HelpMainUi
     {
-        public readonly string Step1Title = Loc.Localize("HelpMainUi_Step1Title", "The Connection State");
-        public readonly string Step1Desc = Loc.Localize("HelpMainUi_Step1Desc", "Displays the current connection status to GagSpeak Servers.");
-        public readonly string Step1DescExtended = Loc.Localize("HelpMainUi_Step1DescExtended", "Button displays as green when connected, and red when disconnected. " +
-            "Hovering over the icon will show you the current status.");
+        public readonly string Step1Title = Loc.Localize("HelpMainUi_Step1Title", "Connection Status");
+        public readonly string Step1Desc = Loc.Localize("HelpMainUi_Step1Desc", "Displays your current connection status to the GagSpeak servers.");
+        public readonly string Step1DescExtended = Loc.Localize("HelpMainUi_Step1DescExtended", "A green icon is displayed when connected and a red icon is displayed when disconnected. " +
+            "Hover over the icon to view your connection status.");
 
         public readonly string Step2Title = Loc.Localize("HelpMainUi_Step2Title", "The Homepage");
         public readonly string Step2Desc = Loc.Localize("HelpMainUi_Step2Desc", "All of GagSpeaks Modules are accessed from this menu.");
@@ -382,7 +382,7 @@ namespace GagSpeak.Localization
     public class HelpPatterns
     {
         public readonly string Step1Title = Loc.Localize("HelpPatterns_Step1Title", "Creating New Patterns");
-        public readonly string Step1Desc = Loc.Localize("HelpPatterns_Step1Desc", "The Button to click in order to record a new pattern.");
+        public readonly string Step1Desc = Loc.Localize("HelpPatterns_Step1Desc", "Click this button to create a new pattern.");
 
         public readonly string Step2Title = Loc.Localize("HelpPatterns_Step2Title", "The Recorded Duration");
         public readonly string Step2Desc = Loc.Localize("HelpPatterns_Step2Desc", "Shows how long your Pattern has been recording for.");
@@ -894,7 +894,7 @@ namespace GagSpeak.Localization
 
         public readonly string DeleteButtonLabel = Loc.Localize("Accounts_DeleteButtonLabel", "Delete Account");
         public readonly string DeleteButtonDisabledTT = Loc.Localize("Accounts_DeleteButtonDisabledTT", "Cannot delete this account as it is not yet registered.");
-        public readonly string DeleteButtonTT = Loc.Localize("Accounts_DeleteButtonTT", "Permanently deleting this account from GagSpeak servers." +
+        public readonly string DeleteButtonTT = Loc.Localize("Accounts_DeleteButtonTT", "Permanently delete this account from GagSpeak servers." +
             "--SEP--WARNING: Once an account is deleted, the associated secret key will become unusable." +
             "--SEP--If you wish to create a new account for the currently logged in character, you will need to obtain a new secret key." +
             "--SEP--(A confirmation dialog will open upon clicking this button)");
