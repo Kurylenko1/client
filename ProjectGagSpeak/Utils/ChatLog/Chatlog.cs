@@ -26,6 +26,7 @@ public class ChatLog
     private static Vector4 CkMistressText = new Vector4(1, 0.711f, 0.843f, 1f);
     public DateTime TimeCreated { get; set; }
     public bool AutoScroll = true;
+    private string _lastAttachedMessage = string.Empty;
 
     // Define which users to ignore.
     public List<string> UidSilenceList = new List<string>();
@@ -108,10 +109,16 @@ public void AddMessageRange(IEnumerable<ChatMessage> messages)
                 if (ImGui.IsItemClicked(ImGuiMouseButton.Right))
                 {
                     _lastInteractedMsg = x;
+                    _lastAttachedMessage = string.Empty;
                     ImGui.OpenPopup($"GlobalChatMessageActions_{x.UID}");
                 }
+                if (ImGui.IsItemClicked(ImGuiMouseButton.Middle))
+                {
+                    _mediator.Publish(new KinkPlateOpenStandaloneLightMessage(x.UserData));
+                }
                 UiSharedService.AttachToolTip("Sent @ " + x.TimeStamp.ToString("T", CultureInfo.CurrentCulture) +
-                    "--SEP--Right-Click to View Interactions");
+                    "--SEP--Right-Click to View Interactions" +
+                    "--SEP--Middle-Click to open KinkPlate");
                 ImUtf8.SameLineInner();
 
                 // Get the remaining width available in the current row
@@ -199,20 +206,24 @@ public void AddMessageRange(IEnumerable<ChatMessage> messages)
                 }
             }
             UiSharedService.AttachToolTip("Opens " + _lastInteractedMsg.Name + "'s Light KinkPlate.");
+            ImGui.Separator();
 
             using (ImRaii.Disabled(!KeyMonitor.ShiftPressed()))
             {
                 // Display each action as a selectable
                 if (ImGui.Selectable("Send Kinkster Request"))
                 {
-                    _ = _apiHubMain.UserSendPairRequest(new(new(_lastInteractedMsg.UID)));
+                    _ = _apiHubMain.UserSendPairRequest(new(new(_lastInteractedMsg.UID), _lastAttachedMessage));
                     _lastInteractedMsg = new ChatMessage();
                     ImGui.CloseCurrentPopup();
                 }
                 if (KeyMonitor.ShiftPressed()) UiSharedService.AttachToolTip("Sends a Kinkster Request to " + _lastInteractedMsg.Name + ".");
             }
             if (!KeyMonitor.ShiftPressed()) UiSharedService.AttachToolTip("Must be holding SHIFT to select.");
-
+            ImGui.SetNextItemWidth(ImGui.GetWindowWidth() - 20);
+            ImGui.InputTextWithHint("##attachedPairMsg", "Attached Request Msg..", ref _lastAttachedMessage, 100);
+            ImGui.Separator();
+            
             using (ImRaii.Disabled(!KeyMonitor.CtrlPressed()))
             {
                 if (ImGui.Selectable("Hide Messages from Kinkster"))

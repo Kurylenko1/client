@@ -1,5 +1,3 @@
-
-
 /// Global Usings
 global using Newtonsoft.Json;
 global using Newtonsoft.Json.Linq;
@@ -30,7 +28,8 @@ global using MoodlesStatusInfo = (
     bool AsPermanent,
     System.Guid StatusOnDispell,
     string CustomVFXPath,
-    bool StackOnReapply
+    bool StackOnReapply,
+    int StacksIncOnReapply
     );
 
 global using MoodlePresetInfo = (

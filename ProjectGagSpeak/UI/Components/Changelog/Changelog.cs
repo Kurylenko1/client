@@ -19,6 +19,46 @@ public class Changelog
     // Add Version Data here.
     private void AddVersionData()
     {
+        VersionEntry(1, 1, 1, 1)
+            .RegisterFeature("When using /safeword or /safewordhardcore, you can provide a UID at the end of the command to isolate the revert function to a single pair.")
+            .RegisterFeature("You can now adjust the opacity of the blindfold overlay.")
+            .RegisterQol("You can now adjust the opacity of the blindfold overlay.")
+            .RegisterQol("You can now click through the blindfold window.")
+            .RegisterQol("Privacy DTR bar no longer shows characters that are not controllable players (no more examine actor ghosts).")
+            .RegisterQol("Kinkplates now abide by dalamuds global scaling tool.")
+            .RegisterQol("Kinkplates have had their width expanded to account for longer titles, and the height expanded to account for the overflow line in the description.")
+            .RegisterQol("Kinkplate profile pictures are now slightly larger in light kinkplates.")
+            .RegisterQol("Sends event messages on PiShock instructions send to you from others.")
+            .RegisterQol("HOPEFULLY fix the blindfold delay?")
+            .RegisterBugfix("Fixed Devotional locks breaking blindfolds.")
+            .RegisterBugfix("Fixed movement always resetting to standard upon disabling the plugin if you had legacy prior.")
+            .RegisterBugfix("made minor bug fixes to resolve over 30+ reported other minor bugs.");
+        VersionEntry(1, 1, 1, 0)
+            .RegisterMain("Authentication issues should be almost if not completely resolved now... (I pray and hope so) Safe to say more may spawn but should be easier to patch.")
+            .RegisterFeature("Prevent duplicate keys from characters.")
+            .RegisterFeature("Prevent people from trying to connect as a primary user with an alt account.")
+            .RegisterFeature("Cursed Loot should now function in Deep Dungeons.")
+            .RegisterBugfix("Fixed crash that occursed when you reconnected with an expected restraint set that no longer exists for you.")
+            .RegisterBugfix("Fixed issue where the 'Your Rubber Slut' Achievement required 4 days instead of 14 days.")
+            .RegisterBugfix("Fixed an issue where the pair requests only displayed 1 outgoing max.")
+            .RegisterBugfix("Fixed pair request messages not displaying.")
+            .RegisterBugfix("Fixed where migrations for restraint sets were not allowing 'Transfer All' unless you had a cursed item created for some reason.");
+        VersionEntry(1, 1, 0, 3)
+            .RegisterMain("Update for new Moodles tuple status. Until Moodles is 1.0.0.39 expect the ShareHub and other Moodles features to be non-functional.");
+        VersionEntry(1, 1, 0, 2)
+            .RegisterBugfix("We're just not going to talk about how stupid of a fix this was.");
+        VersionEntry(1, 1, 0, 0)
+            .RegisterMain("Moodles ShareHub is now Live!")
+            .RegisterMain("'My Publications' tab is now in the Home Page. Manage published uploads of Patterns & Moodles in one place!")
+            .RegisterFeature("Browse, Like, Un-Like, Copy, and Try-On browsed Moodles in the Moodle ShareHub!")
+            .RegisterFeature("Use the 'Try On' feature to apply moodles to your character before copying them to your status list to see how you like them!")
+            .RegisterFeature("ACHIEVEMENT SAVE DATA IS NOW OUTPUT TO YOUR LOGS EVERY TIME YOU CONNECT TO THE SERVER. IF IT SOMEHOW RESETS BEFORE I CAN FIX " +
+            "THE ISSUES, SEND ME YOUR LOGS IMMIDIATELY SO I CAN RESTORE THEM.")
+            .RegisterQol("A new interface for uploading and publishing Moodles now exists.")
+            .RegisterQol("All publication features from the pattern edit window and save window have been removed, and moved to the Publications UI.")
+            .RegisterQol("You can now like patterns and moodles once again.")
+            .RegisterBugfix("Fixed the rare issue in where loading the game after repedative crashing failed to load " +
+            "required configs from services. (or at least a band-aid fix)");
         VersionEntry(1, 0, 4, 2)
             .RegisterFeature("Support for new Moodles Preset and Stack On Reapply mare issue fixed.");
         VersionEntry(1, 0, 4, 1)

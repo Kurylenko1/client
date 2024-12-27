@@ -156,7 +156,7 @@ public sealed partial class MainHub : GagspeakHubBase, IGagspeakHubClient
 
                 if (await ConnectionDtoAndVersionIsValid() is false)
                 {
-                    Logger.LogWarning("Connection was not valid, disconnecting.", LoggerType.ApiCore);
+                    Logger.LogWarning("Connection was not valid, disconnecting.");
                     return;
                 }
 

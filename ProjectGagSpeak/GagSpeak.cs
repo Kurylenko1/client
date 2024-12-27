@@ -43,6 +43,7 @@ using GagSpeak.UI.Simulation;
 using GagSpeak.UI.Tabs.WardrobeTab;
 using GagSpeak.UI.UiGagSetup;
 using GagSpeak.UI.UiOrders;
+using GagSpeak.UI.UiPublications;
 using GagSpeak.UI.UiPuppeteer;
 using GagSpeak.UI.UiRemote;
 using GagSpeak.UI.UiToybox;
@@ -207,9 +208,8 @@ public static class GagSpeakServiceExtensions
         .AddSingleton<PairHandlerFactory>()
         .AddSingleton<ParticipantFactory>()
         .AddSingleton<PrivateRoomFactory>()
-        .AddSingleton((s) => new PairManager(s.GetRequiredService<ILogger<PairManager>>(),
-            s.GetRequiredService<GagspeakMediator>(), s.GetRequiredService<PairFactory>(),
-            s.GetRequiredService<GagspeakConfigService>(), cm))
+        .AddSingleton((s) => new PairManager(s.GetRequiredService<ILogger<PairManager>>(), s.GetRequiredService<GagspeakMediator>(), 
+            s.GetRequiredService<PairFactory>(), s.GetRequiredService<GagspeakConfigService>(), s.GetRequiredService<ServerConfigurationManager>(), cm))
         .AddSingleton<PrivateRoomManager>()
         .AddSingleton<OnConnectedService>()
         .AddSingleton<ClientCallbackService>()
@@ -327,6 +327,9 @@ public static class GagSpeakServiceExtensions
         .AddSingleton<OrdersCreator>()
         .AddSingleton<OrdersAssigner>()
 
+        // Publications UI
+        .AddSingleton<PublicationsManager>()
+
         // UI Components
         .AddSingleton<PermActionsComponents>()
         .AddSingleton<IdDisplayHandler>()
@@ -373,7 +376,7 @@ public static class GagSpeakServiceExtensions
         .AddSingleton((s) => new DiscoverService(pi.ConfigDirectory.FullName, s.GetRequiredService<ILogger<DiscoverService>>(),
             s.GetRequiredService<GagspeakMediator>(), s.GetRequiredService<MainHub>(), s.GetRequiredService<MainMenuTabs>(), 
             s.GetRequiredService<PairManager>()))
-        .AddSingleton<PatternHubService>()
+        .AddSingleton<ShareHubService>()
         .AddSingleton<PermissionPresetService>()
         .AddSingleton((s) => new KinkPlateService(s.GetRequiredService<ILogger<KinkPlateService>>(),
             s.GetRequiredService<GagspeakMediator>(), s.GetRequiredService<MainHub>(),
@@ -471,6 +474,7 @@ public static class GagSpeakServiceExtensions
         .AddScoped<WindowMediatorSubscriberBase, PuppeteerUI>()
         .AddScoped<WindowMediatorSubscriberBase, ToyboxUI>()
         .AddScoped<WindowMediatorSubscriberBase, OrdersUI>()
+        .AddScoped<WindowMediatorSubscriberBase, PublicationsUI>()
         .AddScoped<WindowMediatorSubscriberBase, BlindfoldUI>((s) => new BlindfoldUI(s.GetRequiredService<ILogger<BlindfoldUI>>(), s.GetRequiredService<GagspeakMediator>(),
             s.GetRequiredService<ClientConfigurationManager>(), s.GetRequiredService<OnFrameworkService>(), s.GetRequiredService<UiSharedService>(), pi))
         .AddScoped<WindowMediatorSubscriberBase, KinkPlateEditorUI>()
@@ -487,7 +491,7 @@ public static class GagSpeakServiceExtensions
         .AddScoped((s) => new UiService(s.GetRequiredService<ILogger<UiService>>(), pi.UiBuilder, s.GetRequiredService<GagspeakConfigService>(),
             s.GetRequiredService<WindowSystem>(), s.GetServices<WindowMediatorSubscriberBase>(), s.GetRequiredService<UiFactory>(), s.GetRequiredService<MainMenuTabs>(),
             s.GetRequiredService<GagspeakMediator>(), s.GetRequiredService<FileDialogManager>(), s.GetRequiredService<PenumbraChangedItemTooltip>()))
-        .AddScoped((s) => new CommandManager(s.GetRequiredService<GagspeakMediator>(), s.GetRequiredService<GagspeakConfigService>(),
+        .AddScoped((s) => new CommandManager(s.GetRequiredService<GagspeakMediator>(), s.GetRequiredService<PairManager>(), s.GetRequiredService<GagspeakConfigService>(),
             s.GetRequiredService<ServerConfigurationManager>(), s.GetRequiredService<ChatBoxMessage>(), s.GetRequiredService<DeathRollService>(), cg, cs, cm))
         .AddScoped((s) => new UiSharedService(s.GetRequiredService<ILogger<UiSharedService>>(), s.GetRequiredService<MainHub>(), s.GetRequiredService<ClientConfigurationManager>(), 
             s.GetRequiredService<ServerConfigurationManager>(), s.GetRequiredService<UiFontService>(), s.GetRequiredService<OnFrameworkService>(), s.GetRequiredService<IpcManager>(), pi, tp));

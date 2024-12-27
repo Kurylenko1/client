@@ -407,50 +407,35 @@ namespace GagSpeak.Localization
         public readonly string Step8Title = Loc.Localize("HelpRemote_Step8Title", "Saving Pattern Name");
         public readonly string Step8Desc = Loc.Localize("HelpRemote_Step8Desc", "Define the name of the pattern you have created.");
 
-        public readonly string Step9Title = Loc.Localize("HelpRemote_Step9Title", "Saving Pattern Author");
-        public readonly string Step9Desc = Loc.Localize("HelpRemote_Step9Desc", "Define the Author Label to set for this Pattern.");
-        public readonly string Step9DescExtended = Loc.Localize("HelpRemote_Step9DescExtended", "Author Labels are what is displayed for " +
-            "any pattern uploaded to the Pattern Hub. It will display instead of your UID, to keep you anonymous.");
+        public readonly string Step9Title = Loc.Localize("HelpRemote_Step9Title", "Saving Pattern Description");
+        public readonly string Step9Desc = Loc.Localize("HelpRemote_Step9Desc", "Set the description of your pattern here.");
 
-        public readonly string Step10Title = Loc.Localize("HelpRemote_Step10Title", "Saving Pattern Description");
-        public readonly string Step10Desc = Loc.Localize("HelpRemote_Step10Desc", "Set the description of your pattern here.");
+        public readonly string Step10Title = Loc.Localize("HelpRemote_Step10Title", "Saving Pattern Loop Status");
+        public readonly string Step10Desc = Loc.Localize("HelpRemote_Step10Desc", "Define if your created pattern should loop once it reaches the end.");
 
-        public readonly string Step11Title = Loc.Localize("HelpRemote_Step11Title", "Saving Pattern Loop Status");
-        public readonly string Step11Desc = Loc.Localize("HelpRemote_Step11Desc", "Define if your created pattern should loop once it reaches the end.");
+        public readonly string Step11Title = Loc.Localize("HelpRemote_Step11Title", "Optionally Discarding Pattern.");
+        public readonly string Step11Desc = Loc.Localize("HelpRemote_Step11Desc", "If you dont like the pattern you made, you can discard it here.");
 
-        public readonly string Step12Title = Loc.Localize("HelpRemote_Step12Title", "Saving Pattern Tags");
-        public readonly string Step12Desc = Loc.Localize("HelpRemote_Step12Desc", "Give up to 5 tag labels that define your pattern. These cannot be edited later.");
+        public readonly string Step12Title = Loc.Localize("HelpRemote_Step12Title", "Adding the New Pattern");
+        public readonly string Step12Desc = Loc.Localize("HelpRemote_Step12Desc", "To Finialize the Pattern Creation, Save & Add the pattern here.");
 
-        public readonly string Step13Title = Loc.Localize("HelpRemote_Step13Title", "Optionally Discarding Pattern.");
-        public readonly string Step13Desc = Loc.Localize("HelpRemote_Step13Desc", "If you dont like the pattern you made, you can discard it here.");
+        public readonly string Step13Title = Loc.Localize("HelpRemote_Step13Title", "Modifying Patterns");
+        public readonly string Step13Desc = Loc.Localize("HelpRemote_Step13Desc", "Selecting a pattern from the pattern list will allow you to edit it.");
 
-        public readonly string Step14Title = Loc.Localize("HelpRemote_Step14Title", "Adding the New Pattern");
-        public readonly string Step14Desc = Loc.Localize("HelpRemote_Step14Desc", "To Finialize the Pattern Creation, Save & Add the pattern here.");
+        public readonly string Step14Title = Loc.Localize("HelpRemote_Step14Title", "Editing Display Info");
+        public readonly string Step14Desc = Loc.Localize("HelpRemote_Step14Desc", "In the editor there is basic display info and adjustments. Display info shows the basic labels of the pattern");
 
-        public readonly string Step15Title = Loc.Localize("HelpRemote_Step15Title", "Modifying Patterns");
-        public readonly string Step15Desc = Loc.Localize("HelpRemote_Step15Desc", "Selecting a pattern from the pattern list will allow you to edit it.");
+        public readonly string Step15Title = Loc.Localize("HelpRemote_Step15Title", "Changing Pattern Loop State");
+        public readonly string Step15Desc = Loc.Localize("HelpRemote_Step15Desc", "If you want to change wether the pattern loops or not, you can do so here.");
 
-        public readonly string Step16Title = Loc.Localize("HelpRemote_Step16Title", "Editing Display Info");
-        public readonly string Step16Desc = Loc.Localize("HelpRemote_Step16Desc", "In the editor there is basic display info and adjustments. Display info shows the basic labels of the pattern");
+        public readonly string Step16Title = Loc.Localize("HelpRemote_Step16Title", "Changing the Start-Point");
+        public readonly string Step16Desc = Loc.Localize("HelpRemote_Step16Desc", "This lets you change the point in the pattern that playback will start at.");
 
-        public readonly string Step17Title = Loc.Localize("HelpRemote_Step17Title", "Making Adjustments");
-        public readonly string Step17Desc = Loc.Localize("HelpRemote_Step17Desc", "The Adjustements tab is where you set adjust settings related to how the pattern is played.");
+        public readonly string Step17Title = Loc.Localize("HelpRemote_Step17Title", "Changing the Duration");
+        public readonly string Step17Desc = Loc.Localize("HelpRemote_Step17Desc", "This lets you change how long the pattern playback will go on for from its start point.");
 
-        public readonly string Step18Title = Loc.Localize("HelpRemote_Step18Title", "Changing Pattern Loop State");
-        public readonly string Step18Desc = Loc.Localize("HelpRemote_Step18Desc", "If you want to change wether the pattern loops or not, you can do so here.");
-
-        public readonly string Step19Title = Loc.Localize("HelpRemote_Step19Title", "Changing the Start-Point");
-        public readonly string Step19Desc = Loc.Localize("HelpRemote_Step19Desc", "This lets you change the point in the pattern that playback will start at.");
-
-        public readonly string Step20Title = Loc.Localize("HelpRemote_Step20Title", "Changing the Duration");
-        public readonly string Step20Desc = Loc.Localize("HelpRemote_Step20Desc", "This lets you change how long the pattern playback will go on for from its start point.");
-
-        public readonly string Step21Title = Loc.Localize("HelpRemote_Step21Title", "Saving Changes");
-        public readonly string Step21Desc = Loc.Localize("HelpRemote_Step21Desc", "Updates any changes you made to your edit.");
-
-        public readonly string Step22Title = Loc.Localize("HelpRemote_Step22Title", "Publishing to the PatternHub.");
-        public readonly string Step22Desc = Loc.Localize("HelpRemote_Step22Desc", "Optionally, if you wish to upload your pattern to the pattern hub under your anonymous Author name, you can do so here!");
-        public readonly string Step22DescExtended = Loc.Localize("HelpRemote_Step22DescExtended", "Patterns can be unpublished at any point. But are not removed if deleted prior to unpublishing, and will stay up under your anonymous name.");
+        public readonly string Step18Title = Loc.Localize("HelpRemote_Step18Title", "Saving Changes");
+        public readonly string Step18Desc = Loc.Localize("HelpRemote_Step18Desc", "Updates any changes you made to your edit.");
     }
 
     public class HelpTriggers
@@ -767,8 +752,11 @@ namespace GagSpeak.Localization
         public readonly string BlindfoldFirstPerson = Loc.Localize("Hardcore_BlindfoldFirstPerson", "Force First-Person Perspective");
         public readonly string BlindfoldFirstPersonTT = Loc.Localize("Hardcore_BlindfoldFirstPersonTT", "Forces you into first-person perspective when blindfolded.");
 
-        public readonly string BlindfoldTypeHeader = Loc.Localize("Hardcore_BlindfoldTypeHeader", "Blindfold Type");
-        public readonly string LaceStyle = Loc.Localize("Hardcore_LaceStyle", "Lace Style");
+        public readonly string BlindfoldType = Loc.Localize("Hardcore_BlindfoldType", "Lace Style");
+        public readonly string BlindfoldTypeTT = Loc.Localize("Hardcore_BlindfoldTypeTT", "Select the type of blindfold you wish to use.");
+
+        public readonly string BlindfoldOpacity = Loc.Localize("Hardcore_BlindfoldOpacity", "Opacity");
+        public readonly string BlindfoldOpacityTT = Loc.Localize("Hardcore_BlindfoldOpacityTT", "Set the opacity of the blindfold to account for variance in monitor displays.");
 
         public readonly string AddNodeLastSeenTT = Loc.Localize("Hardcore_AddNodeLastSeenTT", "Add last interacted node to list." +
             "--SEP--Note: Auto-selecting yes is not an allowed option");
@@ -832,6 +820,9 @@ namespace GagSpeak.Localization
 
         // UI Preferences Section
         public readonly string HeaderUiPrefs = Loc.Localize("Preferences_HeaderUiPrefs", "User Interface");
+
+        public readonly string ShowMainUiOnStartLabel = Loc.Localize("Preferences_ShowMainUiOnStartLabel", "Open the Main Window UI upon plugin startup.");
+        public readonly string ShowMainUiOnStartTT = Loc.Localize("Preferences_ShowMainUiOnStartTT", "Determines if the Main UI will open upon plugin startup or not.");
 
         public readonly string EnableDtrLabel = Loc.Localize("Preferences_EnableDtrEntryLabel", "Display status and visible pair count in Server Info Bar");
         public readonly string EnableDtrTT = Loc.Localize("Preferences_EnableDtrEntryTT", "Adds GagSpeak connection status and visible pair count to the Server Info Bar.");
@@ -957,6 +948,8 @@ namespace GagSpeak.Localization
     public class CursedLoot
     {
         // Add more here if people actually care for it.
+        public readonly string TreasureName = Loc.Localize("CursedLoot_TreasureName", "Treasure Coffer");
+
     }
 
     public class Moodles
